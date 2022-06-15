@@ -13,7 +13,13 @@ Section 3.2 of textbook
 6/15/22 2 to 4pm - Picking a topic & starting research.
 
 
-
+### Roadmap
+1) Read documentation by 6/16
+2) Select Parameters for sorting by 6/16
+3) Perform seq sort on data -- Classtime 6/16
+4) Perform openMP sort on data
+5) Implement with array of structures & stuctures of arrays
+6) Review
 
 
 
