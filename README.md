@@ -7,6 +7,8 @@ https://data.world/datasets/solar
 
 https://www.lrde.epita.fr/~bleton/doc/parallel-depth-first-search.pdf
 
+Section 3.2 of textbook
+
 ## Hours Log
 6/15/22 2 to 4pm - Picking a topic & starting research.
 
