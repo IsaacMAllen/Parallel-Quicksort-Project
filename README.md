@@ -9,6 +9,7 @@ https://www.lrde.epita.fr/~bleton/doc/parallel-depth-first-search.pdf
 
 Section 3.2 of textbook
 
+
 #### Hours Log
 - 2 Hours x 2 - 6/15/22 2 to 4pm - Picking a topic & starting research - LWR & IMA<br>
 - 1.5 Hours - 6/16/22 11 to 12:30pm - Reading about GPU Quicksort - IMA <br>
@@ -17,6 +18,8 @@ Section 3.2 of textbook
 
 Total Hours
 11.5 Hours
+
+-----
 
 #### Roadmap
 1) Read documentation by 6/16
