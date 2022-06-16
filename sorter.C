@@ -69,7 +69,7 @@ void runSort(int32_t which, std::string errMsg,
     auto makeParaQuickSort = [&] (){ return new ParaQuickSort(size, data, threadCt); };
     std::function<Sorts *()> makeParaSort[QUICKSORT] = {makeParaQuickSort};
 
-    //create an array of pointers to functions that create parallel sort objects
+    //create an array of pointers to functions that create gpu sort objects
     auto makeGpuQuickSort = [&] (){ return new GpuQuickSort(size, data); };
     std::function<Sorts *()> makeGpuSort[QUICKSORT] = {makeGpuQuickSort};
     
@@ -83,7 +83,7 @@ void runSort(int32_t which, std::string errMsg,
     paraPtr = makeParaSort[which]();
     double paraTime = paraPtr->sort();
     
-    /* create the parallel sort object and perform sort */ 
+    /* create the gpu sort object and perform sort */ 
     gpuPtr = makeGpuSort[which]();
     double gpuTime = gpuPtr->sort();
     
