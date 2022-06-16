@@ -1,7 +1,7 @@
 NODEBUGFLAGS = -std=c++14 -fopenmp -O2 -Wall -Werror
 DEBUGFLAGS = -g -std=c++14 -fopenmp -Wall -Werror
 CFLAGS = $(NODEBUGFLAGS)
-OBJS = sorter.o Sorts.o ParaMergeSort.o ParaQuickSort.o SeqMergeSort.o SeqQuickSort.o
+OBJS = sorter.o Sorts.o GPUQuickSort.o 
 CC = g++
 .C.o: 
 	scl enable devtoolset-7 'bash --rcfile <(echo "  \
@@ -17,17 +17,12 @@ sorter: $(OBJS)
 	$(CC) $(OBJS) -fopenmp -o sorter; \
 	exit")'
 
-sorter.o: Sorts.h SeqMergeSort.h SeqQuickSort.h ParaMergeSort.h ParaQuickSort.h 
+
+sorter.o: Sorts.h GPUQuickSort.h 
 
 Sorts.o: Sorts.h Sorts.C
 
-ParaMergeSort.o: Sorts.h ParaMergeSort.h ParaMergeSort.C helpers.h
-
-ParaQuickSort.o: Sorts.h ParaQuickSort.h ParaQuickSort.C helpers.h
-
-SeqMergeSort.o: Sorts.h SeqMergeSort.h SeqMergeSort.C helpers.h
-
-SeqQuickSort.o: Sorts.h SeqQuickSort.h SeqQuickSort.C helpers.h
+GPUQuickSort.o: Sorts.h GPUQuickSort.h GPUQuickSort.C helpers.h
 
 clean:
 	rm sorter *.o

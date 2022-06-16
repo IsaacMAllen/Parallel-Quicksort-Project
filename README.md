@@ -1,6 +1,6 @@
-# QuickSort Parallelization On Cuda with Solar Vehicle Applications
+### QuickSort Parallelization On Cuda with Solar Vehicle Applications
 
-## Resource List
+#### Resource List
 https://solarcar.mst.edu/wp-content/uploads/sites/14/2019/10/Data-Collection-and-Analysis-Techniques-for-Solar-Car-Telemetry-Data.pdf
 
 https://data.world/datasets/solar
@@ -9,11 +9,16 @@ https://www.lrde.epita.fr/~bleton/doc/parallel-depth-first-search.pdf
 
 Section 3.2 of textbook
 
-## Hours Log
-6/15/22 2 to 4pm - Picking a topic & starting research.
-6/16/22 11 to 12:30pm - Reading about GPU Quicksort
+#### Hours Log
+- 2 Hours x 2 - 6/15/22 2 to 4pm - Picking a topic & starting research - LWR & IMA<br>
+- 1.5 Hours - 6/16/22 11 to 12:30pm - Reading about GPU Quicksort - IMA <br>
+- 1 Hour - 6/16/22 1 to 2pm - Article Reading - LWR <br>
+- 2 Hours x 2 - 6/16/22 2 to 4pm - In Class - Read QuickSort article, clone github, begin coding LWR & IMA<br>
 
-### Roadmap
+Total Hours
+10.5 Hours
+
+#### Roadmap
 1) Read documentation by 6/16
 2) Select Parameters for sorting by 6/16
 3) Perform seq sort on data -- Classtime 6/16
