@@ -1,3 +1,6 @@
+#include <string.h>
+#include <ParaQuickSort.h>
+#include <helpers.h>
 
 /* 
     parseArgs
@@ -58,3 +61,72 @@ void parseArgs(int argc, char * argv[], int * matrixDimP,
        else
           printUsage();
     }
+
+/*
+ * sort
+ * Takes as input an array of int32_t values and sorts them using 
+ * a quicksort.
+ * Input:
+ * data - array of int32_t values
+ * size - number of elements in the array
+ * Modifies:
+ * data - elements of data array in increasing sorted order
+ */
+double GPUQuickSort::sort() {
+	TIMERSTART(GPU)
+	quickSort(0, size - 1, data);
+	TIMERSTOP(seq)
+	return GETTIME(GPU);
+}
+
+
+/*
+ * partition
+ * This function partitions the data in the array starting at index
+ * sIdx and ending at eIdx into three sections.  One section contains
+ * the values below a pivot. The middle section contains the single
+ * pivot. The third section contains the values greater than the pivot.
+ * At the end, the pivot is in the correct location in the final sorted array.
+ * Inputs:
+ * sIdx - starting index into the data to sort
+ * eIdx - ending index into the data to sort
+ * data - array of data to sort
+ * Modifies:
+ * data
+ * Returns:
+ * location of pivot
+ */
+int ParaQuickSort::partition(int32_t sIdx, int32_t eIdx, int32_t * data)
+{
+    /* This code doesn't require modification. */
+
+    //define a lambda expression to do a swap 
+    auto swap = [](auto & a, auto & b)
+    {
+        auto t = a;
+        a = b;
+        b = t;
+    };
+
+    //define a lambda expression to do a swap
+    auto choosePivotIndex = [&](auto sIdx, auto eIdx, auto data)
+    {
+        if (sIdx == eIdx) return sIdx;
+        int32_t mid = sIdx + (eIdx - sIdx)/2;
+        if (data[sIdx] < data[mid] && data[mid] < data[eIdx])
+            return mid;
+        else if (data[mid] < data[sIdx] &&  data[sIdx] < data[eIdx])
+            return sIdx;
+        else
+            return eIdx;
+    };
+
+    //choose a good pivot, get the index 
+    int32_t pIdx = choosePivotIndex(sIdx, eIdx, data);
+
+    //get the value of the pivot
+    int32_t pivot = data[pIdx];
+
+    //move pivot to end
+    swap(data[pIdx], data[eIdx]);
+}
