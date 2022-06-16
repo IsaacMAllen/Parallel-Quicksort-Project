@@ -3,6 +3,32 @@
 #include <helpers.h>
 
 /* 
+ * GPUQuickSort
+ * @author: Logan Richardson & Isaac Allen
+ * @date: 6/16/2022
+ * GPU QuickSort parallelization for Summer 2022 - Parallel Programming Class
+ * Sources:
+	Source 1: Dr. Cindy Norris, Programming Assignment 7: Revisiting Sorting
+ *
+*/
+
+
+/*
+ * GPUQuickSort constructor
+ * Initialize threadCt and description.
+ * Use constructor in parent Sorts class to initialize size and data.
+ *
+ * Source: Source 1
+ */
+GPUQuickSort::GPUQuickSort(uint64_t size, int32_t * data, int32_t threadCt):Sorts(size, data)
+{
+    this->threadCt = threadCt;
+    description = "Parallel sort: parallelizes quicksort by creating tasks for partitioning and recursive calls";
+}
+
+
+
+/* 
     parseArgs
     This function parses the command line arguments to get
     the dimension of the matrices, the size of the thread blocks,
@@ -20,6 +46,8 @@
     whichP - which kernel to execute
     doTimeP - pointer to a bool that is set to true or false if timing
               is to be performed
+
+    Source:  Starter code from source 1
 */
 void parseArgs(int argc, char * argv[], int * matrixDimP,
                int * blkDimP, int * tileSzP, int * whichP, bool * doTimeP)
@@ -71,6 +99,8 @@ void parseArgs(int argc, char * argv[], int * matrixDimP,
  * size - number of elements in the array
  * Modifies:
  * data - elements of data array in increasing sorted order
+ * 
+ * Source: Source 1
  */
 double GPUQuickSort::sort() {
 	TIMERSTART(GPU)
@@ -95,8 +125,10 @@ double GPUQuickSort::sort() {
  * data
  * Returns:
  * location of pivot
+ *
+ * Source: Source 1
  */
-int ParaQuickSort::partition(int32_t sIdx, int32_t eIdx, int32_t * data)
+int GPUQuickSort::partition(int32_t sIdx, int32_t eIdx, int32_t * data)
 {
     /* This code doesn't require modification. */
 
