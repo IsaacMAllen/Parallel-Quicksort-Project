@@ -11,7 +11,7 @@ Section 3.2 of textbook
 
 ## Hours Log
 6/15/22 2 to 4pm - Picking a topic & starting research.
-
+6/16/22 11 to 12:30pm - Reading about GPU Quicksort
 
 ### Roadmap
 1) Read documentation by 6/16
