@@ -13,15 +13,16 @@ Section 3.2 of textbook
 - 2 Hours x 2 - 6/15/22 2 to 4pm - Picking a topic & starting research - LWR & IMA<br>
 - 1.5 Hours - 6/16/22 11 to 12:30pm - Reading about GPU Quicksort - IMA <br>
 - 1 Hour - 6/16/22 1 to 2pm - Article Reading - LWR <br>
-- 2 Hours x 2 - 6/16/22 2 to 4pm - In Class - Read QuickSort article, clone github, begin coding LWR & IMA<br>
+- 2.5 Hours x 2 - 6/16/22 2 to 4:30pm - In Class - Read QuickSort article, setup codebase, gpuquicksort.cu & makefile LWR & IMA<br>
 
 Total Hours
-10.5 Hours
+11.5 Hours
 
 #### Roadmap
 1) Read documentation by 6/16
 2) Select Parameters for sorting by 6/16
 3) Perform seq sort on data -- Classtime 6/16
+
 4) Perform openMP sort on data
 5) Implement with array of structures & stuctures of arrays
 6) Review
