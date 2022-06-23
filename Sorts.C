@@ -10,11 +10,13 @@
  * size_: size of the input array
  * input: pointer to the input array
  */
-Sorts::Sorts(uint64_t size_, int32_t * input):size(size_)
+Sorts::Sorts(uint64_t size_, float * input, int32_t * inputIDs):size(size_)
 {
-  data = new int32_t[size];
+  data = new float[size];
+  idList = new int32_t[size];
   for (int64_t i = 0; i < (int64_t) size; i++)
   { 
+    idList[i] = inputIDs[i];
     data[i] = input[i];
   }
 }
@@ -78,9 +80,9 @@ bool Sorts::match(Sorts * sortObj)
   } 
   for (int64_t i = 0; i < (int64_t) size; i++)
   { 
-    if (data[i] != sortObj->data[i])
+    if (data[i] != sortObj->data[i] || idList[i] != sortObj->idList[i])
     {
-      printf("\nSort results have different values at index %ld: %d != %d.\n", 
+      printf("\nSort results have different values at index %ld: %f != %f.\n", 
              i, data[i], sortObj->data[i]);
       return false;
     }

@@ -5,11 +5,12 @@
 class Sorts
 {
   protected:
-    int32_t * data;
+    float * data;
+    int32_t * idList;
     uint64_t size;
     std::string description;
   public:
-    Sorts(uint64_t size, int32_t * input);
+    Sorts(uint64_t size, float * input, int32_t * inputIDs);
     bool match(Sorts * sptr);
     bool increasing();
     std::string getDescription();
