@@ -9,7 +9,7 @@ For example, in the period from Wed Jul 21 17:34:07 PDT 2021 to Thu Jul 22 00:27
 Our program parallelizes the sorting of this data using QuickSort & Merge Sort. The program scans in the comma separated value dataset and populates the data structure. We organized the data into a structure of structures grouping similar variables together. The bmsData structure contains pack, cell, and hiLo data sub structures. The end user can scan in a csv dataset and then choose which variable to sort the data upon.</p>
 
 <h3>How to Use:</h3>
-<strong>1. Setup:</strong> <t>Clone the repo on a server such as App State's Cudaserv.<br>
+<strong>1. Setup:</strong> <t>Clone the repo on a server such as App State's student2 machine.<br>
 <strong>2. Compile:</strong> <t>Run the 'make' command found within the makefile.<br>
 <strong>3. Run:</strong> ./sorter -n {X} -t {Y} -- X = 2^# of arrays  -- Y = # of threads.<br>
 <strong>4. Commands:</strong> -m runs MergeSort, -q runs QuickSort, ./sorter -h provides information.<br>
